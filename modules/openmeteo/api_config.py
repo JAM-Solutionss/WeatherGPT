@@ -1,9 +1,21 @@
 # Configurations for API Call
 
+# Some predefined locations
+locations = {
+    'Hamburg': {
+        'latitude': 53.551086,
+        'longitude': 9.993682,
+    },
+    'München': {
+        'latitude': 53.551086,
+        'longitude': 9.993682,
+    }
+}
+
 # Parameters for API call
 params = {
-    'latitude': 52.52,
-    'longitude': 13.41,
+    'latitude': locations['Hamburg']['latitude'],
+    'longitude': locations['Hamburg']['longitude'],
     'hourly': [
         'temperature_2m',
         'precipitation_probability', 
@@ -12,5 +24,4 @@ params = {
     'timezone': 'Europe/Berlin'
 }
 
-# Location - Placeholder for later
-locations = {}
+
