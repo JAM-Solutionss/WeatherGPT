@@ -1,68 +1,86 @@
-import re
-from urllib import response
+
 import pandas as pd
-import openmeteo_requests
-import pandas as pd
-from retry_requests import retry
-from api_config import params
 
 def current_data_dict(response_json: dict) -> dict:
+    """Extracts current forecast data from response dictionary in separate dictionary.
+
+    Args:
+        response_json (dict): Dictionary of JSON response from API call
+
+    Returns:
+        dict: Dictionary of current forecast data.
+    """
     if 'current' in response_json.keys():
         return response_json['current']
     else: 
         return None
     
 def hourly_data_dict(response_json: dict) -> dict:
+    """Extracts hourly forecast data from response dictionary in separate dictionary.
+
+    Args:
+        response_json (dict): Dictionary of JSON response from API call
+
+    Returns:
+        dict: Dictionary of hourly forecast data.
+    """
     if 'hourly' in response_json.keys():
         return response_json['hourly']
     else: 
         return None
     
 def daily_data_dict(response_json: dict) -> dict:
+    """Extracts daily forecast data from response dictionary in separate dictionary.
+
+    Args:
+        response_json (dict): Dictionary of JSON response from API call
+
+    Returns:
+        dict: Dictionary of daily forecast data.
+    """
     if 'daily' in response_json.keys():
         return response_json['daily']
     else: 
         return None
 
-
-
-
-def data_as_dict(forecast_data) -> dict[dict]:
-    """Processes response data and returns the parameters with its values as dictionary.
+def current_data_dataframe(response_json: dict) -> pd.DataFrame:
+    """Extracts current forecast data from response dictionary in separate dataframe.
 
     Args:
-        response (_type_): Response of the openmeteo API call
-        params (dict): Parameter dictionary that is used to perform the API call.
+        response_json (dict): Dictionary of JSON response from API call
 
     Returns:
-        dict[dict]: Response parameters with its values for 'current', 'hourly' and 'daily' forecast.
+        pd.DataFrame: Dataframe of current forecast data.
     """
-       
-    return forecast_data
-
-def response_as_dataframe(response, params:dict) -> dict[pd.DataFrame]:
-    """Processes response data and returns the parameters with its values as pandas DataFrame.
+    if 'current' in response_json.keys():
+        return pd.DataFrame(response_json['current'])
+    else: 
+        return None
+        
+def hourly_data_dataframe(response_json: dict) -> pd.DataFrame:
+    """Extracts hourly forecast data from response dictionary in separate dataframe.
 
     Args:
-        response (_type_): Response of the openmeteo API call
-        params (dict): Parameter dictionary that is used to perform the API call.
+        response_json (dict): Dictionary of JSON response from API call
 
     Returns:
-        dict[pd.DataFrame]: Response parameters with its values for 'current', 'hourly' and 'daily' forecast in pandas DataFrame format
+        pd.DataFrame: Dataframe of hourly forecast data.
     """
-    response_data = response.Hourly()
-    hourly_dict = hourly_dict(response=response, params=params)
+    if 'hourly' in response_json.keys():
+        return pd.DataFrame(response_json['hourly'])
+    else: 
+        return None
     
-    hourly_dataframe = {
-    'date': pd.date_range(
-        start=pd.to_datetime(response_data.Time(), unit='s', utc=True),
-        end=pd.to_datetime(response_data.TimeEnd(), unit="s", utc=True),
-        freq=pd.Timedelta(seconds=response_data.Interval()),
-        inclusive='left'
-        )
-    }
-    
-    for param, value in hourly_dict.items():
-        hourly_dataframe[param] = value
-    
-    return pd.DataFrame(hourly_dataframe)
+def daily_data_dataframe(response_json: dict) -> pd.DataFrame:
+    """Extracts daily forecast data from response dictionary in separate dataframe.
+
+    Args:
+        response_json (dict): Dictionary of JSON response from API call
+
+    Returns:
+        pd.DataFrame: Dataframe of daily forecast data.
+    """
+    if 'daily' in response_json.keys():
+        return pd.DataFrame(response_json['daily'])
+    else: 
+        return None
