@@ -16,5 +16,5 @@ daten = {
 data = fetch_weater_data()
 
 
-prompt = f"The temperature is {data['temperature_2m_max']} degrees, the rain percentage is {data['rain_sum']}, the wind speed is {data['wind_speed_10m_max']}"
+prompt = f"The temperature is {data['temperature_2m']} degrees, the rain probability is {data['precipitation_probability']}, the wind speed is {data['wind_speed_10m']}"
 gpt(prompt)
