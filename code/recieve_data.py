@@ -7,17 +7,10 @@ from modules.llm import gpt
 from modules.weather import fetch_weater_data
 from modules.openmeteo import get_API_response, hourly_data_dict
 
-
-daten = {
-    "temperature": 30,
-    "rain_percantage": 10,
-    "weather_state": "cloudy",
-    "wind": 20
-}
 response = get_API_response()
 hourly_data_dictionary = hourly_data_dict(response)
 data = hourly_data_dictionary
-print(data)
+#print(data)
 
-prompt = f"The temperature is {data['temperature_2m']} degrees, the rain probability is {data['precipitation_probability']}, the wind speed is {data['wind_speed_10m']}"
+prompt = f"Todays Weather: The temperature is {data['temperature_2m']} degrees, the rain probability is {data['precipitation_probability']}, the wind speed is {data['wind_speed_10m']}"
 gpt(prompt)

@@ -4,6 +4,8 @@ from groq import Groq
 from dotenv import load_dotenv, dotenv_values
 load_dotenv()
 
+from modules.speech import create_audio
+
 # Initialize Client
 client = Groq(
     api_key=os.environ.get("GROQ_API_KEY"),
@@ -15,7 +17,7 @@ def gpt(prompt):
         messages=[
             {
                 "role": "system",
-                "content": "Du bist WeatherGPT, ein AI Assistent der auf Basis der Eingabe eine lustige Wettervorhersage macht. Antworte kurz und Knapp und immer auf Deutsch!",
+                "content": "Du bist WeatherGPT, ein edgy AI Assistent der auf Basis der heutigen Wetterdaten eine sehr humorvolle Wettervorhersage macht. Antworte kurz und Knapp mit Wetterdaten und immer auf Deutsch!",
             },
             {
                 "role": "user",
@@ -30,6 +32,8 @@ def gpt(prompt):
     with open("gpt.txt","w") as gpt:
         gpt.writelines(chat_completion.choices[0].message.content)
         gpt.close()
+    # creates the audio file, plays it and deletes the files automatically!
+    create_audio()
 
 # Chat funktion for testing purpose
 def weather_gpt():
