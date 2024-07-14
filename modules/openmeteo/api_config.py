@@ -14,6 +14,7 @@ locations = {
 
 # Parameters for API call
 params = {
+    "forecast_days": 1,
     'latitude': locations['Hamburg']['latitude'],
     'longitude': locations['Hamburg']['longitude'],
     'hourly': [

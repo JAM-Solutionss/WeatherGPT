@@ -19,7 +19,7 @@ def gpt(prompt):
             },
             {
                 "role": "user",
-                "content": f"{prompt} \n",
+                "content": f"{prompt}",
             }
         ],
         model="llama3-70b-8192",
