@@ -1,7 +1,6 @@
 import requests
 from api_config import params
 from data_processor import hourly_data_dict, hourly_data_dataframe
-import plotly.express as px
 
 # API URL link
 url = "https://api.open-meteo.com/v1/forecast"
