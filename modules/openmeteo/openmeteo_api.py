@@ -1,6 +1,5 @@
 import requests
 from .api_config import params
-from .data_processor import hourly_data_dict, hourly_data_dataframe
 
 def get_API_response() -> dict:
     """Calling the openmetep API with parameters definde in api_config and returns the JSON dictionary response.
