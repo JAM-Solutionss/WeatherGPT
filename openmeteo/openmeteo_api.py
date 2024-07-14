@@ -4,7 +4,7 @@ import requests_cache
 import pandas as pd
 from retry_requests import retry
 from api_config import params
-
+from data_processor import response_as_dict
 # Setup the Open-Meteo API client with cache and retry on error
 cache_session = requests_cache.CachedSession('.cache', expire_after = 3600)
 retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
@@ -15,3 +15,4 @@ url = "https://api.open-meteo.com/v1/forecast"
 
 # Performing API calls and get responses
 responses = openmeteo.weather_api(url, params=params)
+response_dictionary = response_as_dict(responses[0], params=params)
