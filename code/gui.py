@@ -2,8 +2,6 @@
 
 # imports 
 import tkinter as tk
-import customtkinter as ctk
-
 
 class Gui(): 
     def __init__(self):
@@ -16,14 +14,15 @@ class Gui():
         self.root.bind("<Escape>", lambda x: quit())
 
     def surface(self):
-        pass
+        greeting = tk.Label(text="Hello, Tkinter")
+        greeting.pack()
 
     
     def run(self):
+        self.surface()
         self.root.mainloop()
 
 
 # __________ main code __________
-if __name__ == "__main__":
-    app = Gui()
-    app.run()
+app = Gui()
+app.run()
