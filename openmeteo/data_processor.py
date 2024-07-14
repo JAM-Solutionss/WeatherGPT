@@ -84,3 +84,4 @@ def daily_data_dataframe(response_json: dict) -> pd.DataFrame:
         return pd.DataFrame(response_json['daily'])
     else: 
         return None
+

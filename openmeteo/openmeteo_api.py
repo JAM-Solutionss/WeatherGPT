@@ -15,5 +15,3 @@ response_data = response.json()
 # Extracting forecast data, e.g. hourly
 hourly_data_dicctionary = hourly_data_dict(response_data)
 hourly_data_df = hourly_data_dataframe(response_data)
-
-
