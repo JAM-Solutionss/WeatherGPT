@@ -1,11 +1,33 @@
 import re
+from urllib import response
 import pandas as pd
 import openmeteo_requests
 import pandas as pd
 from retry_requests import retry
 from api_config import params
 
-def response_as_dict(response, params: dict) -> dict[dict]:
+def current_data_dict(response_json: dict) -> dict:
+    if 'current' in response_json.keys():
+        return response_json['current']
+    else: 
+        return None
+    
+def hourly_data_dict(response_json: dict) -> dict:
+    if 'hourly' in response_json.keys():
+        return response_json['hourly']
+    else: 
+        return None
+    
+def daily_data_dict(response_json: dict) -> dict:
+    if 'daily' in response_json.keys():
+        return response_json['daily']
+    else: 
+        return None
+
+
+
+
+def data_as_dict(forecast_data) -> dict[dict]:
     """Processes response data and returns the parameters with its values as dictionary.
 
     Args:
@@ -15,22 +37,8 @@ def response_as_dict(response, params: dict) -> dict[dict]:
     Returns:
         dict[dict]: Response parameters with its values for 'current', 'hourly' and 'daily' forecast.
     """
-    response_data = {}
-    response_data['current'] = response.Current()
-    response_data['hourly'] = response.Hourly()
-    response_data['daily'] = response.Daily()
-
-    response_dict = {}
-    
-    for forecast, data in response_data.items():
-        
-        response_dict[forecast] = {}
-        response_dict[forecast]['date_time'] = range()
-             
-        for param_i, param in enumerate(params[forecast]):
-            response_dict[forecast][param] = response_data[forecast].Variables(param_i).ValuesAsNumpy()
-        
-    return response_dict
+       
+    return forecast_data
 
 def response_as_dataframe(response, params:dict) -> dict[pd.DataFrame]:
     """Processes response data and returns the parameters with its values as pandas DataFrame.
