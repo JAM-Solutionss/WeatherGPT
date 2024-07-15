@@ -163,5 +163,5 @@ cython_debug/
 
 
 # Unnecessary Files
-/code/gpt.txt
 /code/.cache.sqlite
+gpt.txt
