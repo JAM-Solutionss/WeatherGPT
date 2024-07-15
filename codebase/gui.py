@@ -193,9 +193,41 @@ class Gui():
             padx=40, 
             pady=0, 
             height=70, 
-            width=1000)
+            width=1000,)
         
+        llm_text = self.text_block(
+            surface, 
+            text=get_llm_response(self), 
+            pack='left',
+            padx=40, 
+            pady=20, 
+            height=200, 
+            width=600)
 
+        str = tk.StringVar(surface)
+        str.set("Select a City")
+
+        options = ['hamburg', 'muenchen', 'berlin', 'koeln', 'frankfurt', 'essen', 'leipzig', 'dortmund', 'stuttgart', 'duesseldorf']
+        
+        def get_city(selection):
+            self.city_name = selection
+
+        city = tk.OptionMenu(surface, str, *options, command=get_city)
+        city.pack(side='top', pady=20)
+
+        
+        speech_button = self.button(
+            surface,
+            text='To speech',
+            height=40,
+            width=50,
+            command=create_audio,
+            pack='top',
+            pady=10)
+        # audio wird nicht beendet
+
+
+        '''
         # frames for the data 
         self.data_main_frame = ctk.CTkFrame(
             self.root, 
@@ -222,17 +254,10 @@ class Gui():
         segmented_menu.set('Temperature')
         segmented_menu.pack(side='top')
         self.show_frame(0, self.data_pages)
-    
+        '''
 
         
-        llm_text = self.text_block(
-            surface, 
-            text=get_llm_response(self), 
-            pack='left',
-            padx=40, 
-            pady=0, 
-            height=200, 
-            width=600)
+        
 
     def data_frame_1(self, surface):
         self.text_block(surface,'test1', pack='bottom', width=920) 
