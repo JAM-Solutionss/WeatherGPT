@@ -46,7 +46,7 @@ def fetch_weater_data():
     hourly_data["wind_speed_10m"] = hourly_wind_speed_10m
 
     hourly_dataframe = pd.DataFrame(data = hourly_data)
-    print(hourly_dataframe)
+    # print(hourly_dataframe)
 
     dt = hourly_dataframe.to_dict(orient='list')
     

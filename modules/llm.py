@@ -26,7 +26,7 @@ def gpt(prompt):
         model="llama3-70b-8192",
     )
     # prints the output of the llm for testing purpose
-    print(chat_completion.choices[0].message.content)
+    # print(chat_completion.choices[0].message.content)
     # writes the output to gpt.txt for further data processing
     with open("gpt.txt","w") as gpt:
         gpt.writelines(chat_completion.choices[0].message.content)

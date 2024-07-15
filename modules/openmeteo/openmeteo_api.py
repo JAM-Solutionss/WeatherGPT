@@ -12,12 +12,12 @@ def get_API_response(gui_instance) -> dict:
 
     # Performing API call and get response
     params = get_params(gui_instance)
-    print(f"Calling API with params: {params}")
+    # print(f"Calling API with params: {params}")
     response = requests.get(url, params=params)
 
     # Getting response as dictionary
     response_data = response.json()
-    print(response_data)
+    # print(response_data)
     return response_data
 
 
