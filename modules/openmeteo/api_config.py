@@ -4,20 +4,27 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from code.gui import Gui
 # Configurations for API Call
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from code.gui import Gui
 
 # Some predefined locations
 locations = {
-    'Hamburg': {
+    'hamburg': {
         'latitude': 53.551086,
         'longitude': 9.993682,
     },
-    'München': {
+    'muenchen': {
         'latitude': 53.551086,
         'longitude': 9.993682,
     }
 }
 
-city = 'München'
+city = Gui().city()
+print(city)
 
 
 # Parameters for API call

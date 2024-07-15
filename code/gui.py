@@ -43,6 +43,8 @@ class Gui():
             'beige':'#F7E7DC'
         }
 
+        self.city = 'hamburg'
+
     # text field blueprint 
     def text_block(self, surface, text='', height=100, width=100, text_color='#FFF8F3', bg_color='#405D72', pack='top', pady=0, padx=0, font_size=18, fill=None):
         label = ctk.CTkLabel(
@@ -190,6 +192,9 @@ class Gui():
         if self.count > 0:
             self.count -= 1
             self.show_frame(self.count)
+
+    def city(self):
+        return self.city
 
     def run(self):
         self.surface()
