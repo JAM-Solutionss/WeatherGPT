@@ -30,6 +30,7 @@ def gpt(prompt):
     # writes the output to gpt.txt for further data processing
     response = chat_completion.choices[0].message.content
     processed_response = ' '.join(response.split())
+    processed_response = processed_response.strip('"')
     with open("gpt.txt","w") as gpt:
         gpt.writelines(processed_response)
         gpt.close()

@@ -174,7 +174,7 @@ class Gui():
             width=1000)
         
         input = ctk.CTkEntry(
-            self.root,
+            surface,
             width=920,
             height=50)
         input.pack()
@@ -197,31 +197,31 @@ class Gui():
         
 
         # frames for the data 
-        #self.data_main_frame = ctk.CTkFrame(
-            #self.root, 
-            #height=250, 
-            #width=920,
-            #corner_radius=20)
+        self.data_main_frame = ctk.CTkFrame(
+            self.root, 
+            height=250, 
+            width=920,
+            corner_radius=20)
         
-        #self.data_main_frame.pack(side='top', expand=True)
+        self.data_main_frame.pack(side='top', expand=True)
 
-        #self.data_pages = [ctk.CTkFrame(self.data_main_frame) for _ in range(6)]
-        #self.data_frames = [self.data_frame_1, self.data_frame_2, self.data_frame_3, self.data_frame_4, self.data_frame_5, self.data_frame_6]
+        self.data_pages = [ctk.CTkFrame(self.data_main_frame) for _ in range(6)]
+        self.data_frames = [self.data_frame_1, self.data_frame_2, self.data_frame_3, self.data_frame_4, self.data_frame_5, self.data_frame_6]
         
-        #for page, frame in zip(self.data_pages, self.data_frames):
-            #frame(page)
+        for page, frame in zip(self.data_pages, self.data_frames):
+            frame(page)
         
-        #segmented_menu = ctk.CTkSegmentedButton(
-            #self.data_main_frame,
-            #values=['Temperature', 'Temperature diagram', '2', '2 diagram', '3', '3 diagram'],
-            #width=920,
-            #height=40,
-            #corner_radius=20,
-            #command=self.segmented_button_callback)
+        segmented_menu = ctk.CTkSegmentedButton(
+            self.data_main_frame,
+            values=['Temperature', 'Temperature diagram', '2', '2 diagram', '3', '3 diagram'],
+            width=920,
+            height=40,
+            corner_radius=20,
+            command=self.segmented_button_callback)
         
-        #segmented_menu.set('Temperature')
-        #segmented_menu.pack(side='top')
-        #self.show_frame(0, self.data_pages)
+        segmented_menu.set('Temperature')
+        segmented_menu.pack(side='top')
+        self.show_frame(0, self.data_pages)
     
 
         
