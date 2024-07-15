@@ -33,7 +33,7 @@ def gpt(prompt):
         gpt.writelines(chat_completion.choices[0].message.content)
         gpt.close()
     # creates the audio file, plays it and deletes the files automatically!
-    create_audio()
+    #create_audio()
 
 # Chat funktion for testing purpose
 def weather_gpt():
