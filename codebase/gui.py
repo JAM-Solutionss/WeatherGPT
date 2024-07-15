@@ -32,7 +32,7 @@ class Gui():
         self.root.title('WeatherGPT')
         self.root.geometry('1000x600')
         #self.root.resizable(False, False)
-
+        self.city_name = 'hamburg'
         # frame setup
         self.main_frame = ctk.CTkFrame(self.root)
         self.main_frame.pack(fill='both', expand=True)
@@ -58,9 +58,9 @@ class Gui():
             'beige':'#F7E7DC'
         }
 
-        self.city_name = 'hamburg'
+        
         print(f"Initialized city_name: {self.city_name}")
-        #get_API_response(self)
+        get_API_response(self)
 
     # text field blueprint 
     def text_block(self, surface, text='', height=100, width=100, text_color='#FFF8F3', bg_color='#405D72', pack='top', pady=0, padx=0, font_size=18, fill=None):
@@ -216,7 +216,7 @@ class Gui():
 
     def run(self):
         self.surface()
-        get_API_response(self)
+        #get_API_response(self)
         self.root.mainloop()
 
 
