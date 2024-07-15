@@ -10,7 +10,7 @@ class Gui():
         self.root = tk.Tk()
         self.root.title('WeatherGPT')
         self.root.geometry('1000x600')
-        self.root.resizable(False, False)
+        #self.root.resizable(False, False)
 
         # frame setup
         self.main_frame = ctk.CTkFrame(self.root)
@@ -40,6 +40,7 @@ class Gui():
             'beage':'#F7E7DC'
         }
 
+    # text field blueprint 
     def text_block(self, surface, text='', height=100, width=100, text_color='#FFF8F3', bg_color='#405D72', pack='top', pady=0, padx=0, font_size=18, fill=None):
         label = ctk.CTkLabel(
             master=surface, 
@@ -48,7 +49,8 @@ class Gui():
             width=width, 
             height=height, 
             fg_color=bg_color, 
-            font=('Helvetica', font_size))
+            font=('Helvetica', font_size),
+            corner_radius=20)
         
         label.pack(
             side=pack, 
@@ -58,6 +60,7 @@ class Gui():
         
         return label
     
+    # button blueprint
     def button(self,surface, text='', height=100, width=100, text_color='#FFF8F3', bg_color='#405D72', pack='top', pady=0, padx=0, font_size=18, command=None, fill=None):
         button = ctk.CTkButton(
             master=surface,
@@ -89,38 +92,49 @@ class Gui():
         titel = self.text_block(
             surface=surface,
             text='How does it work?', 
+            fill='x',
             padx=40, 
-            pady=20)
+            pady=20,
+            height=70,
+            width=1000)
         
         text = self.text_block(
             surface=surface,
             text='Explanation', 
             fill='x', 
             padx=40, 
-            pady=10, 
-            height=300)
+            pady=0, 
+            height=400,
+            width=1000)
         
         api = self.button(
             surface=surface,
             text='API key?', 
+            pack='left',
             padx=40, 
-            pack='bottom',
+            pady=10,
+            height=70,
+            width=250,
             command= lambda: self.show_frame(3))
         
         details = self.button(
             surface=surface,
             text='Technical details', 
+            pack='left',
             padx=40, 
-            pack='left', 
-            fill='x',
+            pady=10,
+            height=70,
+            width=250,
             command= lambda: self.show_frame(4))
         
         next = self.button(
             surface=surface,
             text='Next', 
+            pack='left',
             padx=40, 
-            pack='right', 
-            fill='x',
+            pady=10,
+            height=70,
+            width=250,
             command=self.next_frame)
 
     def frame_4(self, surface):
@@ -135,7 +149,7 @@ class Gui():
     def surface(self):
         # frame_1 -> Start page
         # frame_2 -> What is WeatherGPT?
-        # frame_3 -> Explenation
+        # frame_3 -> Explanation
         # frame_4 -> API Key
         # frame_5 -> Technical details
         # frame_6 -> main frame 
