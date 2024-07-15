@@ -1,3 +1,18 @@
+# import sys
+# import os
+
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# import tkinter as tk
+# from tkinter import ttk
+# import customtkinter as ctk
+
+# from recieve_data import get_llm_response
+# from modules.speech import create_audio
+
+
+
+
 import sys, os
 
 # Fügen Sie den relativen Pfad zu dem Verzeichnis 'code' und 'all_imports' hinzu
