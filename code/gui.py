@@ -1,11 +1,9 @@
-# imports 
 import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
 
 class Gui(): 
     def __init__(self):
-
         # root setup
         self.root = tk.Tk()
         self.root.title('WeatherGPT')
@@ -16,15 +14,12 @@ class Gui():
         self.main_frame = ctk.CTkFrame(self.root)
         self.main_frame.pack(fill='both', expand=True)
 
-        self.page_1 = ctk.CTkFrame(self.main_frame)
-        self.page_2 = ctk.CTkFrame(self.main_frame)
-        self.page_3 = ctk.CTkFrame(self.main_frame)
-        self.page_4 = ctk.CTkFrame(self.main_frame)
-        self.page_5 = ctk.CTkFrame(self.main_frame)
-        self.page_6 = ctk.CTkFrame(self.main_frame)
-        
-        self.pages = [self.page_1, self.page_2, self.page_3, self.page_4, self.page_5, self.page_6]
+        self.pages = [ctk.CTkFrame(self.main_frame) for _ in range(6)]
+        self.frames = [self.frame_1, self.frame_2, self.frame_3, self.frame_4, self.frame_5, self.frame_6]
         self.count = 0
+
+        for page, frame in zip(self.pages, self.frames):
+            frame(page)
 
         # color theme
         style = ttk.Style(self.root)
@@ -37,7 +32,7 @@ class Gui():
             'd_blue':'#405D72',
             'blue':'#758694',
             'white':'#FFF8F3',
-            'beage':'#F7E7DC'
+            'beige':'#F7E7DC'
         }
 
     # text field blueprint 
@@ -52,16 +47,11 @@ class Gui():
             font=('Helvetica', font_size),
             corner_radius=20)
         
-        label.pack(
-            side=pack, 
-            padx=padx, 
-            pady=pady,
-            fill=fill)
-        
+        label.pack(side=pack, padx=padx, pady=pady, fill=fill)
         return label
     
     # button blueprint
-    def button(self,surface, text='', height=100, width=100, text_color='#FFF8F3', bg_color='#405D72', pack='top', pady=0, padx=0, font_size=18, command=None, fill=None):
+    def button(self, surface, text='', height=100, width=100, text_color='#FFF8F3', bg_color='#405D72', pack='top', pady=0, padx=0, font_size=18, command=None, fill=None):
         button = ctk.CTkButton(
             master=surface,
             text=text,
@@ -71,15 +61,9 @@ class Gui():
             fg_color=bg_color,
             text_color=text_color,
             font=('Helvetica', font_size),
-            command=command
-        )
-
-        button.pack(
-            side=pack, 
-            padx=padx, 
-            pady=pady,
-            fill=fill)
+            command=command)
         
+        button.pack(side=pack, padx=padx, pady=pady, fill=fill)
         return button
 
     def frame_1(self, surface):
@@ -89,52 +73,51 @@ class Gui():
         ...
     
     def frame_3(self, surface):
-        titel = self.text_block(
-            surface=surface,
+        title = self.text_block(
+            surface, 
             text='How does it work?', 
-            fill='x',
+            fill='x', 
             padx=40, 
-            pady=20,
-            height=70,
+            pady=20, 
+            height=70, 
             width=1000)
         
         text = self.text_block(
-            surface=surface,
+            surface, 
             text='Explanation', 
             fill='x', 
             padx=40, 
             pady=0, 
-            height=400,
+            height=400, 
             width=1000)
         
-        api = self.button(
-            surface=surface,
+        apt = self.button(
+            surface, 
             text='API key?', 
-            pack='left',
-            padx=40, 
-            pady=10,
-            height=70,
-            width=250,
-            command= lambda: self.show_frame(3))
+            pack='left', 
+            padx=40, pady=10, 
+            height=70, 
+            width=250, 
+            command=lambda: self.show_frame(3))
         
         details = self.button(
-            surface=surface,
+            surface, 
             text='Technical details', 
-            pack='left',
+            pack='left', 
             padx=40, 
-            pady=10,
-            height=70,
-            width=250,
-            command= lambda: self.show_frame(4))
+            pady=10, 
+            height=70, 
+            width=250, 
+            command=lambda: self.show_frame(4))
         
         next = self.button(
-            surface=surface,
+            surface, 
             text='Next', 
-            pack='left',
+            pack='left', 
             padx=40, 
-            pady=10,
-            height=70,
-            width=250,
+            pady=10, 
+            height=70, 
+            width=250, 
             command=self.next_frame)
 
     def frame_4(self, surface):
@@ -144,7 +127,23 @@ class Gui():
         ...
 
     def frame_6(self, surface):
-        ...
+        title = self.text_block(
+            surface, 
+            text='WeatherGPT', 
+            fill='x', 
+            padx=40, 
+            pady=20, 
+            height=70, 
+            width=1000)
+        
+        placeholder = self.text_block(
+            surface, 
+            text='placeholder', 
+            fill='x', 
+            padx=40, 
+            pady=0, 
+            height=400, 
+            width=1000)
 
     def surface(self):
         # frame_1 -> Start page
@@ -154,8 +153,7 @@ class Gui():
         # frame_5 -> Technical details
         # frame_6 -> main frame 
 
-        self.frame_3(self.page_1)
-        self.show_frame(0)
+        self.show_frame(5)
 
     def show_frame(self, index):
         for i, page in enumerate(self.pages):
@@ -170,7 +168,7 @@ class Gui():
             self.show_frame(self.count)
 
     def previous_frame(self):
-        if self.count < len(self.pages) - 1:
+        if self.count > 0:
             self.count -= 1
             self.show_frame(self.count)
 
