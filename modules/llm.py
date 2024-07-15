@@ -28,11 +28,13 @@ def gpt(prompt):
     # prints the output of the llm for testing purpose
     # print(chat_completion.choices[0].message.content)
     # writes the output to gpt.txt for further data processing
+    response = chat_completion.choices[0].message.content
+    processed_response = ' '.join(response.split())
     with open("gpt.txt","w") as gpt:
-        gpt.writelines(chat_completion.choices[0].message.content)
+        gpt.writelines(processed_response)
         gpt.close()
    
-    return chat_completion.choices[0].message.content
+    return processed_response
 
 # Chat funktion for testing purpose
 def weather_gpt():
