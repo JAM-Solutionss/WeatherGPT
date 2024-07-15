@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
 
+from recieve_data import get_llm_response
+
 class Gui(): 
     def __init__(self):
         # root setup
@@ -129,7 +131,7 @@ class Gui():
     def frame_6(self, surface):
         title = self.text_block(
             surface, 
-            text='WeatherGPT', 
+            text="WeatherGPT", 
             fill='x', 
             padx=40, 
             pady=20, 
@@ -147,7 +149,7 @@ class Gui():
         
         llm_text = self.text_block(
             surface, 
-            text='Text form the LLM', 
+            text=get_llm_response(), 
             pack='left',
             padx=40, 
             pady=0, 
@@ -164,7 +166,7 @@ class Gui():
         # frame_5 -> Technical details
         # frame_6 -> main frame 
 
-        self.show_frame(2)
+        self.show_frame(5)
 
     def show_frame(self, index):
         for i, page in enumerate(self.pages):
