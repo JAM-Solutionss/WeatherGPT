@@ -1,14 +1,11 @@
-import sys
-import os
+import sys, os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# Fügen Sie den relativen Pfad zu dem Verzeichnis 'code' und 'all_imports' hinzu
+project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.append(project_path)
 
-import tkinter as tk
-from tkinter import ttk
-import customtkinter as ctk
+from all_imports import ctk, tk, ttk, get_llm_response
 
-from recieve_data import get_llm_response
-from modules.speech import create_audio
 
 class Gui(): 
     def __init__(self):
