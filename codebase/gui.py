@@ -16,10 +16,13 @@
 import sys, os
 
 # Fügen Sie den relativen Pfad zu dem Verzeichnis 'code' und 'all_imports' hinzu
-project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(project_path)
 
-from all_imports import ctk, tk, ttk, get_llm_response
+import tkinter as tk
+from tkinter import ttk
+import customtkinter as ctk
+from all_imports import get_llm_response, get_API_response
 
 
 class Gui(): 
@@ -55,7 +58,9 @@ class Gui():
             'beige':'#F7E7DC'
         }
 
-        self.city = 'hamburg'
+        self.city_name = 'hamburg'
+        print(f"Initialized city_name: {self.city_name}")
+        #get_API_response(self)
 
     # text field blueprint 
     def text_block(self, surface, text='', height=100, width=100, text_color='#FFF8F3', bg_color='#405D72', pack='top', pady=0, padx=0, font_size=18, fill=None):
@@ -169,7 +174,7 @@ class Gui():
         
         llm_text = self.text_block(
             surface, 
-            text=get_llm_response(), 
+            text=get_llm_response(self), 
             pack='left',
             padx=40, 
             pady=0, 
@@ -205,11 +210,13 @@ class Gui():
             self.count -= 1
             self.show_frame(self.count)
 
-    def city(self):
-        return self.city
+    def get_city(self):
+        print(f"Retrieving city_name: {self.city_name}")
+        return self.city_name
 
     def run(self):
         self.surface()
+        get_API_response(self)
         self.root.mainloop()
 
 

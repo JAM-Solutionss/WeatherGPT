@@ -4,7 +4,6 @@ from groq import Groq
 from dotenv import load_dotenv, dotenv_values
 load_dotenv()
 
-from modules.speech import create_audio
 
 # Initialize Client
 client = Groq(
@@ -32,8 +31,7 @@ def gpt(prompt):
     with open("gpt.txt","w") as gpt:
         gpt.writelines(chat_completion.choices[0].message.content)
         gpt.close()
-    # creates the audio file, plays it and deletes the files automatically!
-    #create_audio()
+   
     return chat_completion.choices[0].message.content
 
 # Chat funktion for testing purpose
