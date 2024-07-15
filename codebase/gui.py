@@ -19,14 +19,10 @@ import sys, os
 project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(project_path)
 
-<<<<<<< HEAD:codebase/gui.py
 import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
 from all_imports import get_llm_response, get_API_response
-=======
-from all_imports import ctk, tk, ttk
->>>>>>> 5110abf9ae847afa19a6ce13cd6082fd3b3c214d:code/gui.py
 
 
 class Gui(): 
@@ -178,11 +174,7 @@ class Gui():
         
         llm_text = self.text_block(
             surface, 
-<<<<<<< HEAD:codebase/gui.py
             text=get_llm_response(self), 
-=======
-            text='',#get_llm_response(), 
->>>>>>> 5110abf9ae847afa19a6ce13cd6082fd3b3c214d:code/gui.py
             pack='left',
             padx=40, 
             pady=0, 
