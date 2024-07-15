@@ -196,7 +196,7 @@ class Gui():
             height=70, 
             width=1000,)
         
-        llm_text = self.text_block(
+        self.llm_text = self.text_block(
             surface, 
             text=get_llm_response(self), 
             pack='left',
