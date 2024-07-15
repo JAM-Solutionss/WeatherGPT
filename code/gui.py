@@ -16,10 +16,10 @@
 import sys, os
 
 # Fügen Sie den relativen Pfad zu dem Verzeichnis 'code' und 'all_imports' hinzu
-project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(project_path)
 
-from all_imports import ctk, tk, ttk, get_llm_response
+from all_imports import ctk, tk, ttk
 
 
 class Gui(): 
@@ -169,7 +169,7 @@ class Gui():
         
         llm_text = self.text_block(
             surface, 
-            text=get_llm_response(), 
+            text='',#get_llm_response(), 
             pack='left',
             padx=40, 
             pady=0, 
