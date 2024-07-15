@@ -15,13 +15,45 @@ def get_params(gui_instance):
     # Configurations for API Call
     # Some predefined locations
     locations = {
-        'hamburg': {
-            'latitude': 53.551086,
-            'longitude': 9.993682,
+        "hamburg": {
+            "latitude": 53.5507,
+            "longitude": 9.9930
         },
-        'muenchen': {
-            'latitude': 53.551086,
-            'longitude': 9.993682,
+        "muenchen": {
+            "latitude": 48.1374,
+            "longitude": 11.5755
+        },
+        "berlin": {
+            "latitude": 52.5244,
+            "longitude": 13.4105
+        },
+        "koeln": {
+            "latitude": 50.9333,
+            "longitude": 6.9500
+        },
+        "frankfurt": {
+            "latitude": 50.1155,
+            "longitude": 8.6842
+        },
+        "essen": {
+            "latitude": 51.4566,
+            "longitude": 7.0123
+        },
+        "leipzig": {
+            "latitude": 51.3396,
+            "longitude": 12.3713
+        },
+        "dortmund": {
+            "latitude": 51.5149,
+            "longitude": 7.4660
+        },
+        "stuttgart": {
+            "latitude": 48.7823,
+            "longitude": 9.1770
+        },
+        "duesseldorf": {
+            "latitude": 51.2217,
+            "longitude": 6.7762
         }
     }
     # Parameters for API call
