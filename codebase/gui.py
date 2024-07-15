@@ -155,7 +155,32 @@ class Gui():
             command=self.next_frame)
 
     def frame_4(self, surface):
-        ... 
+        title = self.text_block(
+            surface, 
+            text='API Key usage', 
+            fill='x', 
+            padx=40, 
+            pady=20, 
+            height=70, 
+            width=1000)
+        
+        text = self.text_block(
+            surface, 
+            text='Die Wetterdaten werden über die openmeteo API abgefragt und an die LLM API von groq weitergegeben. Die Antwort des LLM wird generiert und an der entsprechenden Stelle im GUI angezeigt. Die anderen Diagramme werden über die openmeteo API abgefragt und in die GUI eingebunden. Das Sprachmodul ist mithilfe von Google Text To Speech realisiert.', 
+            fill='x', 
+            padx=40, 
+            pady=0, 
+            height=400, 
+            width=1000)
+        
+        input = ctk.CTkEntry(
+            surface,
+            width=920,
+            height=50)
+        input.pack()
+        input.focus_set()
+        input.insert('0', 'Enter API key here')
+        self.API_KEY = input.get()
 
     def frame_5(self, surface):
         ...
@@ -266,6 +291,9 @@ class Gui():
             self.show_frame(4, self.data_pages)
         elif value == '3 diagram':
             self.show_frame(5, self.data_pages)
+
+    def get_api_key(self):
+        return self.API_KEY
 
     def run(self):
         self.surface()

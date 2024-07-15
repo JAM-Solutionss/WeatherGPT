@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Heute ist es also Zeit, die Sonnenbrille mitzunehmen, aber nicht die Regenhose! Die Temperaturen springen zwischen 16 und 26 Grad Celsius hin und her, also von leicht sommerlich bis richtig heiß. Der Wind bläst mit bis zu 18,4 km/h und der Regen? Na, der bleibt zum Glück größtenteils weg, mit einer Wahrscheinlichkeit von nur 46% am Morgen (aber danach überhaupt nicht mehr). Also, zieht euch schön an und genießt den Tag!
+=======
+Hey, du Süßes! Heute gibt's einen tollen Tag mit temperaturen zwischen 16 und 26 Grad! Der Himmel ist leicht bewölkt, aber Regen? Fuggedaboutit! Nur am Morgen vielleicht ein paar Tropfen, aber das ist's auch schon. Der Wind pustet leicht bis mäßig, also keine Sorge, deine Haare bleiben in Form. Also, raus ins Freie und genieße den schönen Tag! 
+>>>>>>> cddb5005c1ad9e43ea524acc7a830cbd4161d1b0
