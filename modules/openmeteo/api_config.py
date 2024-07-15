@@ -4,13 +4,6 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from code.gui import Gui
 # Configurations for API Call
-import sys
-import os
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from code.gui import Gui
-
 # Some predefined locations
 locations = {
     'hamburg': {
