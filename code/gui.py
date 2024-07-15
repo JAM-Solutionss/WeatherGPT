@@ -142,8 +142,19 @@ class Gui():
             fill='x', 
             padx=40, 
             pady=0, 
-            height=400, 
+            height=250, 
             width=1000)
+        
+        llm_text = self.text_block(
+            surface, 
+            text='Text form the LLM', 
+            pack='left',
+            padx=40, 
+            pady=0, 
+            height=200, 
+            width=600)
+        
+        #city = self.option_menu()
 
     def surface(self):
         # frame_1 -> Start page
@@ -153,7 +164,7 @@ class Gui():
         # frame_5 -> Technical details
         # frame_6 -> main frame 
 
-        self.show_frame(5)
+        self.show_frame(2)
 
     def show_frame(self, index):
         for i, page in enumerate(self.pages):
