@@ -6,7 +6,7 @@ sys.path.append(project_path)
 import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
-from all_imports import get_llm_response, get_API_response
+from all_imports import get_llm_response, get_API_response, create_audio
 
 
 class Gui(): 
@@ -225,7 +225,7 @@ class Gui():
     
 
         
-        llm_text = self.text_block(
+        self.llm_text = self.text_block(
             surface, 
             text=get_llm_response(self), 
             pack='left',
@@ -233,6 +233,26 @@ class Gui():
             pady=0, 
             height=200, 
             width=600)
+        
+        speechbutton = self.button(
+            surface,
+            text='Vorlesen',
+            pack='bottom',
+            padx=40,
+            pady=10,
+            height=70,
+            width=250,
+            command=self.speak)
+        
+        reloadbutton = self.button(
+            surface,
+            text='Neu laden',
+            pack='bottom',
+            padx=40,
+            pady=10,
+            height=70,
+            width=250,
+            command=self.reload)
 
     def data_frame_1(self, surface):
         self.text_block(surface,'test1', pack='bottom', width=920) 
@@ -294,6 +314,15 @@ class Gui():
 
     def get_api_key(self):
         return self.API_KEY
+    
+    def speak(self):
+        create_audio()
+    
+    def update_llm_text(self):
+        self.llm_text.configure(text=get_llm_response(self))
+    
+    def reload(self):
+        self.update_llm_text()
 
     def run(self):
         self.surface()
