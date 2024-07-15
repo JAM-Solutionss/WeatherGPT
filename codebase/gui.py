@@ -6,7 +6,7 @@ sys.path.append(project_path)
 import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
-from all_imports import get_llm_response, get_API_response
+from all_imports import get_llm_response, get_API_response, create_audio
 
 
 class Gui(): 
