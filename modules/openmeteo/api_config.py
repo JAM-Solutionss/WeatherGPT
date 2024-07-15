@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 #from codebase.gui import Gui
 def get_city_name(gui_instance):
     city_name = gui_instance.get_city()
-    print(f"City name from gui_instance: {city_name}")
+    # print(f"City name from gui_instance: {city_name}")
     return city_name
  
 
@@ -26,7 +26,7 @@ def get_params(gui_instance):
     }
     # Parameters for API call
     city = get_city_name(gui_instance)
-    print(f"Using city: {city} for API parameters")
+    # print(f"Using city: {city} for API parameters")
     params = {
         "forecast_days": 1,
         'latitude': locations[f'{city}']['latitude'],
@@ -49,4 +49,4 @@ if __name__ == "__main__":
             return self.city_name
 
     gui_instance = DummyGui()
-    print(get_params(gui_instance))
+    # print(get_params(gui_instance))

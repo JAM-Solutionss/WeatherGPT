@@ -1,21 +1,5 @@
-# import sys
-# import os
-
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-# import tkinter as tk
-# from tkinter import ttk
-# import customtkinter as ctk
-
-# from recieve_data import get_llm_response
-# from modules.speech import create_audio
-
-
-
-
 import sys, os
 
-# Fügen Sie den relativen Pfad zu dem Verzeichnis 'code' und 'all_imports' hinzu
 project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(project_path)
 
@@ -32,7 +16,9 @@ class Gui():
         self.root.title('WeatherGPT')
         self.root.geometry('1000x600')
         #self.root.resizable(False, False)
+
         self.city_name = 'hamburg'
+
         # frame setup
         self.main_frame = ctk.CTkFrame(self.root)
         self.main_frame.pack(fill='both', expand=True)
@@ -58,23 +44,44 @@ class Gui():
             'beige':'#F7E7DC'
         }
 
-        
-        print(f"Initialized city_name: {self.city_name}")
+        # print(f"Initialized city_name: {self.city_name}")
         get_API_response(self)
 
     # text field blueprint 
     def text_block(self, surface, text='', height=100, width=100, text_color='#FFF8F3', bg_color='#405D72', pack='top', pady=0, padx=0, font_size=18, fill=None):
-        label = ctk.CTkLabel(
+        label_frame = ctk.CTkFrame(
             master=surface, 
-            text=text,
-            text_color=text_color,
             width=width, 
             height=height, 
-            fg_color=bg_color, 
-            font=('Helvetica', font_size),
+            fg_color=bg_color,
             corner_radius=20)
         
-        label.pack(side=pack, padx=padx, pady=pady, fill=fill)
+        label_frame.pack_propagate(False)  # Prevent the frame from resizing to fit its contents
+        label_frame.pack(
+            side=pack, 
+            padx=padx, 
+            pady=pady, 
+            fill=fill)
+
+        label = ctk.CTkLabel(
+            master=label_frame, 
+            text=text,
+            text_color=text_color,
+            width=width-20,
+            height=height-20,
+            font=('Helvetica', font_size),
+            wraplength=width-40,
+            justify='left')
+        
+        label.pack(padx=10, pady=10)
+        
+        
+        def adjust_font_size(event):
+            new_font_size = max(8, min(event.width // 20, 18))
+            label.configure(font=('Helvetica', new_font_size))
+        
+        label_frame.bind('<Configure>', adjust_font_size)
+
         return label
     
     # button blueprint
@@ -211,7 +218,7 @@ class Gui():
             self.show_frame(self.count)
 
     def get_city(self):
-        print(f"Retrieving city_name: {self.city_name}")
+        # print(f"Retrieving city_name: {self.city_name}")
         return self.city_name
 
     def run(self):
