@@ -16,7 +16,7 @@ Um einen Mehrwert zu haben, gibt es ein Dashboard mit allen wichtigen Wetterdate
 ### Team:
 
 - arvedb
-- cipher shadow
+- cipher-shad0w
 - mirixy
 
 ### Dev-Tools:
