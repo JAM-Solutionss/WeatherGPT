@@ -1,45 +1,20 @@
 annotated-types==0.7.0
 anyio==4.4.0
-attrs @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_224434dqzl/croot/attrs_1695717839274/work
-Bottleneck @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_2bxpizxa3c/croot/bottleneck_1707864819812/work
-Brotli @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_27zk0eqdh0/croot/brotli-split_1714483157007/work
-cattrs @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b0b_jdcke7/croot/cattrs_1699984884884/work
-certifi @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_70oty9s9jh/croot/certifi_1720453497032/work/certifi
-charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
 click==8.1.7
 customtkinter==5.2.2
 darkdetect==0.8.0
 distro==1.9.0
-exceptiongroup @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b2258scr33/croot/exceptiongroup_1706031391815/work
 flatbuffers==24.3.25
 groq==0.9.0
 gTTS==2.5.1
 h11==0.14.0
 httpcore==1.0.5
 httpx==0.27.0
-idna @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a12xpo84t2/croot/idna_1714398852854/work
-itsdangerous @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_00jdi1gu23/croot/itsdangerous_1716533346702/work
-numexpr @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_45yefq0kt6/croot/numexpr_1696515289183/work
-numpy @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a51i_mbs7m/croot/numpy_and_numpy_base_1708638620867/work/dist/numpy-1.26.4-cp310-cp310-macosx_11_0_arm64.whl#sha256=c4b11b3c4d4fdb810039503fe01f311ade06cd1d675fcd6d208800a393f19b69
 openmeteo_requests==1.2.0
 openmeteo_sdk==1.11.11
 packaging==24.1
-pandas @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_b53hgou29t/croot/pandas_1718308972393/work/dist/pandas-2.2.2-cp310-cp310-macosx_11_0_arm64.whl#sha256=7e70989ec6c6e08f2fd87d3940d106704e9feb936002297690d7462e35b5da35
-platformdirs @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a8u4fy8k9o/croot/platformdirs_1692205661656/work
 pydantic==2.8.2
 pydantic_core==2.20.1
-PySocks @ file:///Users/ktietz/ci_310/pysocks_1643961536721/work
-python-dateutil @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_66ud1l42_h/croot/python-dateutil_1716495741162/work
 python-dotenv==1.0.1
-pytz @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a4b76c83ik/croot/pytz_1713974318928/work
-PyYAML @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_a8_sdgulmz/croot/pyyaml_1698096054705/work
-requests @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b143dxenr7/croot/requests_1716902835977/work
-requests-cache @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c8yvyl9swh/croot/requests-cache_1712847493077/work
 retry-requests==2.0.0
-six @ file:///tmp/build/80754af9/six_1644875935023/work
 sniffio==1.3.1
-typing_extensions @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_93dg13ilv4/croot/typing_extensions_1715268840722/work
-tzdata @ file:///croot/python-tzdata_1690578112552/work
-ujson @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_dexxju769y/croot/ujson_1717597527341/work
-url-normalize @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_1fsw4pj3g9/croot/url-normalize_1712757516876/work
-urllib3 @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_cao7_u9937/croot/urllib3_1718912649114/work
