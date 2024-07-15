@@ -14,7 +14,7 @@ def create_audio():
 
     os.system("afplay weatherforecast.mp3")
     os.remove("weatherforecast.mp3")
-    os.remove("gpt.txt")
+    #os.remove("gpt.txt")
 
 if __name__ == "__main__":
     create_audio()
