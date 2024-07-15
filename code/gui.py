@@ -1,8 +1,14 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
 
 from recieve_data import get_llm_response
+from modules.speech import create_audio
 
 class Gui(): 
     def __init__(self):

@@ -12,11 +12,13 @@ locations = {
     }
 }
 
+city = 'München'
+
 # Parameters for API call
 params = {
     "forecast_days": 1,
-    'latitude': locations['Hamburg']['latitude'],
-    'longitude': locations['Hamburg']['longitude'],
+    'latitude': locations[f'{city}']['latitude'],
+    'longitude': locations[f'{city}']['longitude'],
     'hourly': [
         'temperature_2m',
         'precipitation_probability', 
